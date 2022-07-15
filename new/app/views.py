@@ -8,9 +8,8 @@ def home(request):
     else:
         post = Post.objects.filter(category__category_name=categories)
         
-    category = Category.objects.all()
     context = {
-        "category":category,
+        "category":Category.objects.all()
         "post":post
     }
     return render(request, 'index.html', context)
